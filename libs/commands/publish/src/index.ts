@@ -1125,11 +1125,6 @@ class PublishCommand extends Command {
       return;
     }
 
-    if (normalize(pkg.location) === normalize(pkg.contents)) {
-      // no need to copy assets if publishing from the source location
-      return;
-    }
-
     const _workspaceRoot = process.env["NX_WORKSPACE_ROOT_PATH"] || workspaceRoot;
 
     const assets = pkg.lernaConfig?.command?.publish?.assets;
